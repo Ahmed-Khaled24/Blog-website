@@ -1,35 +1,113 @@
+body {
+  position: relative;
+  min-height: 100vh;
+}
+h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+}
+h2 {
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
 .container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 .navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
 }
-.navbar-nav  li a:hover {
-    color: #1abc9c !important;
+.navbar-nav li a:hover {
+  color: #1abc9c !important;
+}
+
+.hd-p {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 400px;
+}
+.posts-area {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.post-body {
+  display: flex;
+  border-bottom: 1px solid rgb(210, 210, 210);
+  font-family: "Edu SA Beginner", cursive;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-div button {
+  width: 100px;
+  height: 40px;
+  margin-top: 20px;
+  color: white;
+  background-color: #1abc9c;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.form-div input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+.form-div button:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+.form-div label {
+  margin-top: 20px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+}
+.form-div textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  resize: none;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
 }
 
 .footer-padding {
-	padding-bottom: 60px;
+  padding-bottom: 60px;
 }
-
 .footer {
-	position: absolute;
-	text-align: center;
-	bottom: 0;
-	width: 100%;
-	height: 60px;
-	background-color: #1abc9c;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+  background-color: #1abc9c;
 }
-
 .footer p {
-	margin-top: 25px;
-	font-size: 12px;
+  font-size: 18px;
   color: #fff;
+  font-family: "Edu SA Beginner", cursive;
+  font-weight: 500;
 }
