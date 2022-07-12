@@ -38,10 +38,9 @@ app.get("/", (req, res) => {
     });
   });
 });
+
 app.get("/:page", (req, res) => {
-  console.log("get req for a page");
   let requestedPage = _.lowerCase(req.params.page);
-  console.log(requestedPage);
   switch (requestedPage) {
     case "contact":
       res.render("contact", { contactContent: contactContent });
@@ -73,8 +72,20 @@ app.get("/posts/:id", (req, res) => {
 app.post("/compose", (req, res) => {
   let postTitle = req.body.title;
   let postBody = req.body.body;
-  console.log("post title: " + postTitle + "\npost body: " + postBody);
   Post.create({ title: postTitle, body: postBody });
+  res.redirect("/");
+});
+
+app.post("/delete", (req, res) => {
+  let postId = req.body.postId;
+  console.log(req.body);
+  Post.deleteOne({ _id: postId }, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Post with id " + postId + " deleted successfully.");
+    }
+  });
   res.redirect("/");
 });
 
