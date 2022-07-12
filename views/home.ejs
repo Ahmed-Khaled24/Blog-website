@@ -5,21 +5,27 @@
   <p class="hd-p"><%= homeStartingContent %></p>
 </div>
 
-<div class="posts-area">
+<div class="posts-area"> 
   <% for(var i = 0 ; i < posts.length; i++){ %>
+  <% let postBody = posts[i].body; %>
+  <% let postId = posts[i]._id %> 
+  
   <h2><%= posts[i].title %></h2>
-  <div class="post-body">
-    <% let postBody = posts[i].body; %> 
+  <form action="/delete" method="post" id=<%= postId %>>
+    <input type="hidden" name="postId" value=<%= postId %> >
+    <a href="#" onclick="document.getElementById('<%= postId %>').submit()" class="delete-link"> Delete this post </a>
+  </form>
 
+  <div class="post-body">  
     <% if(postBody.length > 100) {postBody = postBody.substring(0, 100) + "....\t";%>
-    <p><%= postBody %> <a href= <%="/posts/" + posts[i]._id %>>Read more</a></p>
+    <p><%= postBody %> <a href= <%="/posts/" + postId %>>Read more</a></p>
     <% } %> 
     
     <% if(postBody.length <= 100) {%>
       <p><%= postBody %></p>
     <% } %>
-    
   </div>
+
   <% } %>
 </div>
 <a href="/compose" class="add-link"> Add new post </a>
