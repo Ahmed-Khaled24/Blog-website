@@ -10,11 +10,15 @@
   <h2><%= posts[i].title %></h2>
   <div class="post-body">
     <% let postBody = posts[i].body; %> 
-    <% if(postBody.length > 100) {postBody = postBody.substring(0, 100) + "....\t";}%>
-    <p><%= postBody %></p>
-    <% if(postBody.length > 100) {%>
-    <a href= <%="/posts/" + posts[i]._id %>>Read more</a>
+
+    <% if(postBody.length > 100) {postBody = postBody.substring(0, 100) + "....\t";%>
+    <p><%= postBody %> <a href= <%="/posts/" + posts[i]._id %>>Read more</a></p>
+    <% } %> 
+    
+    <% if(postBody.length <= 100) {%>
+      <p><%= postBody %></p>
     <% } %>
+    
   </div>
   <% } %>
 </div>
